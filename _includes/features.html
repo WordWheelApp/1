@@ -1,0 +1,48 @@
+<div class="features">
+
+    {% for feature in site.features %}
+
+    {% if feature.title %}
+    <div class="feature">
+        <div>
+            <span class="fa-stack fa-1x">
+                <i class="iconBack fas fa-circle fa-stack-2x"></i>
+                <i class="iconTop fas fa-{{ feature.fontawesome_icon_name }} fa-stack-1x"></i>
+            </span>
+        </div>
+        <div class="featureText">
+            <h3>
+                {{ feature.title }}
+            </h3>
+            <p>
+                {{ feature.description }}
+            </p>
+        </div>
+    </div>
+    {% endif %}
+
+    {% endfor %}
+
+</div>
+
+<div class="screenshots">
+    <div class="screenshots-block">
+        <div class="screenshots-block_description">
+            <h3>UČENÍ ANGLIČTINY PŘI ŘEŠENÍ KŘÍŽOVEK</h3>
+            <p>
+                V této fantastické křížovce si zároveň zlepšíte slovní zásobu a pravopisné dovednosti. Tyto hádanky jsou náročné a bude testovat, jak široká je vaše slovní zásobu, jak kombinovat různé možnosti, a pokud můžete vyhledávat dost dobře vyřešit skládačky.
+            </p></div>
+        <div class="screenshots-block_picture"></div>
+    </div>
+
+    <div class="screenshots-block">
+        <div class="screenshots-block_picture"></div>
+        <div class="screenshots-block_description">
+            <h3>ZLEPŠIT SVOU SLOVNÍ ZÁSOBU </h3>
+            <p>
+                Kolik slov doopravdy znáš? Vaše slovní zásoba může být omezenější, než si myslíte...nebo možná ne!
+            </p>
+        </div>
+    </div>
+
+</div>
