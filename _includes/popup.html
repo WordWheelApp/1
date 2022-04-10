@@ -39,31 +39,38 @@
 </div>
 
 <script>
-    // Get the modal
     var modal = document.getElementById("myModal");
 
-    // Get the button that opens the modal
-    var btn = document.getElementById("myBtn");
+    var playStoreBtns = document.getElementsByClassName("playStoreBtn");
+    var appStoreBtns = document.getElementsByClassName("appStoreBtn");
 
-    // Get the <span> element that closes the modal
+    debugger;
+
     var span = document.getElementsByClassName("close")[0];
 
-    // When the user clicks the button, open the modal 
-    btn.onclick = function () {
+    for (let i = 0; i < playStoreBtns.length; i++) 
+    {
+        playStoreBtns[i].onclick = function () {
         modal.style.display = "block";
+        }
     }
 
-    // When the user clicks on <span> (x), close the modal
+    for (let i = 0; i < appStoreBtns.length; i++) 
+    {
+        appStoreBtns[i].onclick = function () {
+        modal.style.display = "block";
+        }
+    }
+
     span.onclick = function () {
         modal.style.display = "none";
     }
 
-    // When the user clicks anywhere outside of the modal, close it
     window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
         }
-    }
+        }
 
     function showMessage(input, message, type) {
         // get the small element and set the message
@@ -119,6 +126,8 @@
         let nameValid = hasValue(form.elements["name"], NAME_REQUIRED);
         let emailValid = validateEmail(form.elements["email"], EMAIL_REQUIRED, EMAIL_INVALID);
         // if valid, submit the form.
+
+        debugger;
         if (nameValid && emailValid) {
 
             $.ajax({
@@ -127,9 +136,9 @@
                 dataType: "json",
                 crossDomain: true,
                 data: JSON.stringify({
-                    FirstName: form.elements["name"],
+                    FirstName: form.elements["name"].value,
                     LastName: "WordWheel",
-                    Email: form.elements["email"],
+                    Email: form.elements["email"].value,
                     DateTime: new Date().toISOString(),
                     TimezoneOffset: new Date().getTimezoneOffset()
                 }),
